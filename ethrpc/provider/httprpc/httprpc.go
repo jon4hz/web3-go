@@ -6,8 +6,8 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/alethio/web3-go/etherr"
-	"github.com/alethio/web3-go/jsonrpc2"
+	"github.com/jon4hz/web3-go/etherr"
+	"github.com/jon4hz/web3-go/jsonrpc2"
 )
 
 const (
@@ -80,7 +80,6 @@ func (p *HTTPProvider) Call(result interface{}, method string, params ...interfa
 		return err
 	}
 	return nil
-
 }
 
 // Subscribe creates a subscription to event using method. not available on http
@@ -99,7 +98,7 @@ func New(url string) (*HTTPProvider, error) {
 
 // NewWithLoader initializes a Client with a specified loader and returns it
 func NewWithLoader(url string, loader RPCLoader) (*HTTPProvider, error) {
-	var httpClient = &http.Client{
+	httpClient := &http.Client{
 		Transport: &http.Transport{},
 		Timeout:   DefaultHTTPTimeout,
 	}
@@ -111,7 +110,6 @@ func NewWithLoader(url string, loader RPCLoader) (*HTTPProvider, error) {
 	}
 	loader.Init(p)
 	return p, nil
-
 }
 
 // SetHTTPTimeout allows setting the http timeout from outside

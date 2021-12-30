@@ -6,7 +6,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/alethio/web3-go/jsonrpc2"
+	"github.com/jon4hz/web3-go/jsonrpc2"
 )
 
 // NewBatchLoader creates a new batchLoader given a fetch, wait, and maxBatch
@@ -16,7 +16,6 @@ func NewBatchLoader(maxBatch int, wait time.Duration) (*BatchLoader, error) {
 	}
 	if wait < 1*time.Millisecond {
 		return nil, fmt.Errorf("Minimum wait time must be at least 1 Millisecond")
-
 	}
 
 	return &BatchLoader{

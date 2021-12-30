@@ -12,9 +12,9 @@ import (
 
 	"golang.org/x/time/rate"
 
-	"github.com/alethio/web3-go/etherr"
-	"github.com/alethio/web3-go/jsonrpc2"
 	"github.com/gorilla/websocket"
+	"github.com/jon4hz/web3-go/etherr"
+	"github.com/jon4hz/web3-go/jsonrpc2"
 	log "github.com/sirupsen/logrus"
 )
 
@@ -193,9 +193,9 @@ func (p *WSProvider) connect() error {
 		p.client = c
 
 		// TODO disable for now check https://github.com/gorilla/websocket/issues/355
-		//c.SetReadDeadline(time.Now().Add(pongWait))
+		// c.SetReadDeadline(time.Now().Add(pongWait))
 		c.SetPongHandler(p.handlePong)
-		//connected and subscribed, leave
+		// connected and subscribed, leave
 		break
 	}
 
@@ -203,7 +203,7 @@ func (p *WSProvider) connect() error {
 }
 
 func (p *WSProvider) handlePong(string) error {
-	//p.client.SetReadDeadline(time.Now().Add(pongWait))
+	// p.client.SetReadDeadline(time.Now().Add(pongWait))
 	return nil
 }
 

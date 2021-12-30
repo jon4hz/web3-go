@@ -9,13 +9,13 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/alethio/web3-go/strhelper"
-	"github.com/alethio/web3-go/types"
+	"github.com/jon4hz/web3-go/strhelper"
+	"github.com/jon4hz/web3-go/types"
 
-	"github.com/alethio/web3-go/etherr"
-	"github.com/alethio/web3-go/ethrpc/provider"
-	"github.com/alethio/web3-go/ethrpc/provider/httprpc"
-	"github.com/alethio/web3-go/ethrpc/provider/wsrpc"
+	"github.com/jon4hz/web3-go/etherr"
+	"github.com/jon4hz/web3-go/ethrpc/provider"
+	"github.com/jon4hz/web3-go/ethrpc/provider/httprpc"
+	"github.com/jon4hz/web3-go/ethrpc/provider/wsrpc"
 )
 
 // ETH server interaction
@@ -254,7 +254,6 @@ func (e *ETH) GetERC20Decimals(address string) (uint8, error) {
 		default:
 			return 0, err
 		}
-
 	}
 	if d < 0 || d > 255 {
 		return 0, etherr.InvalidUInt8

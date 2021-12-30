@@ -7,8 +7,8 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	"github.com/alethio/web3-go/ethrpc"
-	"github.com/alethio/web3-go/ethrpc/provider/httprpc"
+	"github.com/jon4hz/web3-go/ethrpc"
+	"github.com/jon4hz/web3-go/ethrpc/provider/httprpc"
 )
 
 type worker struct {
@@ -73,7 +73,6 @@ func main() {
 		log.Printf("%+v\n", b)
 	case "getBlockNumberRaw":
 		ba, err := e.MakeRequestRaw(ethrpc.ETHBlockNumber)
-
 		if err != nil {
 			log.Fatal("Eth failed to get block number raw: ", err)
 		}
@@ -156,5 +155,4 @@ func main() {
 	default:
 		log.Println("Command not implemented")
 	}
-
 }

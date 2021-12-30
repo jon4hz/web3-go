@@ -6,14 +6,14 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/alethio/web3-go/types"
+	"github.com/jon4hz/web3-go/types"
 
-	"github.com/alethio/web3-go/thelper"
+	"github.com/jon4hz/web3-go/thelper"
 
 	"github.com/stretchr/testify/assert"
 
 	mock "github.com/alethio/ethmock/server"
-	"github.com/alethio/web3-go/ethrpc/provider/httprpc"
+	"github.com/jon4hz/web3-go/ethrpc/provider/httprpc"
 )
 
 var update = flag.Bool("update", false, "update golden files")
@@ -22,7 +22,7 @@ func TestRequests(t *testing.T) {
 	eth, teardown := setup(t)
 	defer teardown()
 
-	var tests = map[string]func(t *testing.T){
+	tests := map[string]func(t *testing.T){
 		// GetBalanceAtBlock(address, blockNumber string) (*big.Int, error)
 		// GetBlockByNumber(number string, full bool) (b entities.RPCBlockResponse, err error)
 		// GetBlockNumber() (int64, error)
