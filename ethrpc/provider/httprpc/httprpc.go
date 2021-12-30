@@ -116,3 +116,8 @@ func NewWithLoader(url string, loader RPCLoader) (*HTTPProvider, error) {
 func (p *HTTPProvider) SetHTTPTimeout(httpTimeout time.Duration) {
 	p.client.Timeout = httpTimeout
 }
+
+// SetHTTPClient allows setting the http client from outside
+func (p *HTTPProvider) SetHTTPClient(httpClient *http.Client) {
+	p.client = httpClient
+}
